@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="10.0"  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="PackageStuff">
+    <ItemGroup>
+      <FilesToZip Include="D:\Project\MSBuild\project\pics\*.*" />
+    </ItemGroup>  
+    
+    <MSBuild.ExtensionPack.Compression.DNZip 
+      TaskAction="Create"
+      CompressFiles="@(FilesToZip)" 
+      ZipFileName="D:\Project\MSBuild\project\thezip.zip"
+      />
+    
+      
+  </Target>
+  
+  
+  <Import Project="Common.Targets" />
+  <Import Project="C:\Program Files\MSBuild\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks" />
+</Project>
